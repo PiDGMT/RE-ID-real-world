@@ -92,7 +92,7 @@ def compare_two_people(
 
         dataiter = iter(pair)
         image11, image22 = next(dataiter)
-
+        #for quadruplet, add another ,_ to both and two for quintuplet
         if gpu:
             (vector1, vector2, _) = net(image11.cuda(), image22.cuda())
         else:

@@ -14,10 +14,14 @@ list_best_thetas = []
 list_TTR = []
 list_FTR = []
 
+seed = 0
+
 Amount_Of_Runs = 10
 
 
 for i in range(Amount_Of_Runs):
+    seed+=1
+    random.seed(seed)
   
     ### These should be separable:
     ## 1. Selection
