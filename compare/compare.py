@@ -5,13 +5,14 @@ and calculates a distance score
 
 import json
 import sys
-sys.path.append('../model')
+sys.path.append('../models')
 import numpy as np
 import random
 import torch
 import torch.nn.functional as F
 from triplet import Tripletb0
 from quadruplet import Quadrupletb0
+from quintuplet import quintupletb0
 from itertools import product
 from pairwise import Pairwise
 from PIL import Image
