@@ -1,5 +1,3 @@
-## The Great Pieter Meulenbelt Re-ID system
-
 Instructions:
 
 Instructions: This is a test procedure for re-id models that simulates a real-world re-id scenario.
