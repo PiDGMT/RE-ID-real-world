@@ -40,7 +40,7 @@ for i in range(Amount_Of_Runs):
     TESTSET_FOLDER = "../market1501/testset/"
     TRANSFORMATION = transforms.Compose(
             [
-            transforms.Resize( (244, 244) ),
+            transforms.Resize( (224, 224) ),
             transforms.ToTensor(),
             transforms.Normalize(
                 mean = [0.486, 0.459, 0.408],
