@@ -41,10 +41,10 @@ TEST_IMAGES_PATH = "temp_save/test_images.json"
 def load_network(gpu):
     if gpu:
         net = Tripletb0().cuda()
-        checkpoint = torch.load('../weights/triplet1501V2validextra30')
+        checkpoint = torch.load('../weights/triplet1501V2validb1schedule')
     else:
         net = Tripletb0()
-        checkpoint = torch.load('../weights/triplet1501V2validextra30', map_location=torch.device('cpu'))
+        checkpoint = torch.load('../weights/triplet1501V2validb1schedule', map_location=torch.device('cpu'))
 
     # Hieronder zijn de weights
     net.load_state_dict(checkpoint['model_state_dict'])
