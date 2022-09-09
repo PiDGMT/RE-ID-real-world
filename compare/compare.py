@@ -43,7 +43,7 @@ def load_network(gpu):
       returns the loaded model with the trained weights
       """
 
-    #change to Quadrupletb0().cuda() for quadruplet and '../weights/quadruplet1501V2'
+    #change to Quadrupletb0().cuda() for quadruplet and the approriate weights
     if gpu:
         net = Tripletb0().cuda()
         checkpoint = torch.load('../weights/triplet1501V2validb1schedule')
