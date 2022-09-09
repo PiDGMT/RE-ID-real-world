@@ -9,8 +9,8 @@ import json
 
 ## Parameters to tweak
 CAMERA_IDS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6']
-NUMBER_TEST_PEOPLE = 4
-NUMBER_CAMERAS_PER_PERSON = 3
+NUMBER_TEST_PEOPLE = 10
+NUMBER_CAMERAS_PER_PERSON = 5
 
 def get_random_people(
     input,
@@ -18,6 +18,10 @@ def get_random_people(
     number_test_people,
     number_cameras_per_person
     ):
+    """
+    Takes the different camera IDs of the dataset, the number of peole that are to be tested and the amount of images
+    returns the randomly chosen test images and camera ID split
+    """
 
     imagefile = sorted(os.listdir(input))
 
