@@ -28,7 +28,7 @@ class Tripletb0(torch.nn.Module):
 if __name__ == "__main__":
   net = Tripletb0().cuda()
   #hieronder zijn de weights
-  checkpoint = torch.load('C:/Users/piete/Documents/siamese/weights/triplet1501V2validb0schedule'')
+  checkpoint = torch.load('C:/Users/piete/Documents/siamese/weights/triplet1501V2validb1schedule'')
   net.load_state_dict(checkpoint['model_state_dict'])
   #dit is om hem in evaluation modus te zetten
   net.eval()
