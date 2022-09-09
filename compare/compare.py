@@ -37,8 +37,13 @@ TRANSFORMATION = transforms.Compose(
 COMPARE_IMAGES_PATH = "temp_save/compare_images.json"
 TEST_IMAGES_PATH = "temp_save/test_images.json"
 
-#change to Quadrupletb0().cuda() for quadruplet and '../weights/quadruplet1501V2'
 def load_network(gpu):
+      """
+      Loads the re-id model to either the GPU or the CPU
+      returns the loaded model with the trained weights
+      """
+
+    #change to Quadrupletb0().cuda() for quadruplet and '../weights/quadruplet1501V2'
     if gpu:
         net = Tripletb0().cuda()
         checkpoint = torch.load('../weights/triplet1501V2validb1schedule')
@@ -46,10 +51,10 @@ def load_network(gpu):
         net = Tripletb0()
         checkpoint = torch.load('../weights/triplet1501V2validb1schedule', map_location=torch.device('cpu'))
 
-    # Hieronder zijn de weights
+    # loads the trained weights to the model, stored in the weights folder
     net.load_state_dict(checkpoint['model_state_dict'])
 
-    # Dit is om hem in evaluation modus te zetten
+    # set model to evaluation mode
     net.eval()
     return net
 
@@ -62,6 +67,10 @@ def compare_two_people(
     transformation,
     testset_folder
     ):
+    """
+    Takes in two tracks for comparison ad the amount of images to be compared of the test set and applies the image transormation to this data
+    Returns the distance of the compared images
+    """
 
     print(f"Comparing Person {person1[0][:4]},",
         f"camera {person1[0][5:7]}",
@@ -92,7 +101,8 @@ def compare_two_people(
 
         dataiter = iter(pair)
         image11, image22 = next(dataiter)
-        #for quadruplet, add another ,_ to both and two for quintuplet
+        
+        #for quadruplet the quadruplet, add another ,_ to both and two underscores for quintuplet model.
         if gpu:
             (vector1, vector2, _) = net(image11.cuda(), image22.cuda())
         else:
@@ -117,6 +127,11 @@ def calculate_distances(
     gpu,
     max_image_comparisons
     ):
+    """
+    returns the set distance between probe and gallery set 
+    """
+    
+    
 
     net = load_network(gpu)
 
@@ -140,6 +155,9 @@ def calculate_distances(
     return distances
 
 def make_scoreboard(distances):
+    """
+    creates a scoreboard of the distances of people that are a match and peolpe that aren't
+    """
     scoreboard = {
     "Same" : [],
     "Different": []
