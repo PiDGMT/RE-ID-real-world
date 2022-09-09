@@ -6,6 +6,7 @@ from torchvision import transforms
 import numpy as np
 
 """
+Amount of runs, number of test people, cameras per person and amount of images per comaparison have to be selected here
 Runs everything and returns accuracy
 """
 ## list that keep track of scores for each run
