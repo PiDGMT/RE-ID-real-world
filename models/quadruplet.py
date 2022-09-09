@@ -32,7 +32,7 @@ class Quadrupletb0(torch.nn.Module):
 if __name__ == "__main__":
   net = Quadrupletb0().cuda()
   #hieronder zijn de weights
-  checkpoint = torch.load('C:/Users/piete/Documents/siamese/weights/quadruplet1501V2validschedule')
+  checkpoint = torch.load('../weights/quadruplet1501V2validschedule')
   net.load_state_dict(checkpoint['model_state_dict'])
   #dit is om hem in evaluation modus te zetten
   net.eval()
