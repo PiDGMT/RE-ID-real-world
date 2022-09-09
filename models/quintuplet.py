@@ -1,7 +1,7 @@
 from torchvision import models
 import torch
 
-class quintuplet(torch.nn.Module):
+class Quintuplet(torch.nn.Module):
 
     def __init__(self):
         """
