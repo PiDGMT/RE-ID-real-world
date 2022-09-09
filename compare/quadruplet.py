@@ -14,6 +14,7 @@ class Quadrupletb0(torch.nn.Module):
         """
         Forwards the inputs of the model trough the model
         The 3rd and 4th inputs as set to None, as for image comparison suring tested, these are not used
+        returns the outputs
         """
 
         output1 = self.net(input1)
