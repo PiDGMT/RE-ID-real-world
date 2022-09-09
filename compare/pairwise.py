@@ -1,6 +1,9 @@
 from torch.utils.data import Dataset
 
 class Pairwise(Dataset):
+    """
+    Transforms the input images to be suitable for the re-id model
+    """
     def __init__(self, img1, img2, transform):
         self.img1 = img1
         self.img2 = img2
