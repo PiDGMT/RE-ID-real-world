@@ -35,8 +35,7 @@ class Quintuplet(torch.nn.Module):
             
 if __name__ == "__main__":
   net = quintuplet().cuda()
-  #hieronder zijn de weights
-  checkpoint = torch.load('C:/Users/piete/Documents/siamese/weights/quinvalid3')
+  checkpoint = torch.load('../weights/quinvalid3')
   net.load_state_dict(checkpoint['model_state_dict'])
   #dit is om hem in evaluation modus te zetten
   net.eval()
