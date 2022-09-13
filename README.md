@@ -5,7 +5,7 @@ This is a project done for a thesis on open-world re-identification. In this rep
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Instructions:
+## Instructions:
 
 Instructions: This is a test procedure for re-id models that simulates a real-world re-id scenario.
 
@@ -16,3 +16,5 @@ The goal of the model is to correctly assign the right tracks as 'same' while as
 Out of the scoreboard, the False Target Rate (FTR) and the True Target Rate (TTR) will be calculated, and the score will be the TTR-FTR.
 
 To run the test, simply run main.py
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
