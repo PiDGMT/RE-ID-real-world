@@ -1,3 +1,10 @@
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+This is a project done for a thesis on open-world re-identification. In this repo, the files for training a triplet model, a quadruplet model and a quintuplet model on the EfficientNet-b0 are pusblished, as well as the trained weights for 60 epochs.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 Instructions:
 
 Instructions: This is a test procedure for re-id models that simulates a real-world re-id scenario.
