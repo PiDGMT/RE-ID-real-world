@@ -4,9 +4,10 @@ from get_random_people import get_random_people
 from theta_search import theta_split
 from torchvision import transforms
 import numpy as np
+import random
 
 """
-Amount of runs, number of test people, cameras per person and amount of images per comaparison have to be selected here
+Amount of runs, number of test people, cameras per person, and amount of images per comparison have to be selected here
 Runs everything and returns accuracy
 """
 ## list that keep track of scores for each run
@@ -14,7 +15,6 @@ list_best_scores = []
 list_best_thetas = []
 list_TTR = []
 list_FTR = []
-
 seed = 0
 
 Amount_Of_Runs = 10

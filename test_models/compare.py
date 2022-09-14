@@ -1,11 +1,11 @@
 """
-Runs comparisons between people between cameras,
-and calculates a distance score
+Runs comparisons between people between cameras, and calculates a distance score
+In this file, the models can be loaded at the load_network function
 """
 
 import json
 import sys
-sys.path.append('../models')
+sys.path.append('..\models')
 import numpy as np
 import random
 import torch
@@ -38,10 +38,10 @@ COMPARE_IMAGES_PATH = "temp_save/compare_images.json"
 TEST_IMAGES_PATH = "temp_save/test_images.json"
 
 def load_network(gpu):
-      """
-      Loads the re-id model to either the GPU or the CPU
-      returns the loaded model with the trained weights
-      """
+    """
+    Loads the re-id model to either the GPU or the CPU
+    returns the loaded model with the trained weights
+    """
 
     #change to Quadrupletb0().cuda() for quadruplet and the approriate weights
     if gpu:
